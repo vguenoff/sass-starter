@@ -1,4 +1,4 @@
-.tdbc-button {
+.d-button {
     display: inline-flex;
     align-items: center;
     align-self: start;
@@ -8,8 +8,8 @@
     padding: 0.25em 1em;
     transition: 180ms ease-in-out;
     transition-property: background, border;
-    border-radius: $tdbc-border-radius/2;
-    background-color: tdbc-color("primary");
+    border-radius: $d-border-radius/2;
+    background-color: d-color("primary");
     color: #fff;
     font-size: 1.125rem;
     line-height: 1.1;
@@ -24,8 +24,7 @@
     &:focus {
         outline-color: transparent;
         outline-style: solid;
-        box-shadow: 0 0 0 3px
-            scale-color(tdbc-color("primary"), $lightness: -30%);
+        box-shadow: 0 0 0 3px scale-color(d-color("primary"), $lightness: -30%);
     }
 
     &--small {
@@ -58,29 +57,26 @@
     }
 
     &-outlined {
-        border: 2px solid tdbc-color("primary");
+        border: 2px solid d-color("primary");
         background-color: transparent;
-        color: tdbc-color("primary");
+        color: d-color("primary");
 
         &:hover,
         &:focus {
-            background-color: scale-color(
-                tdbc-color("primary"),
-                $lightness: 80%
-            );
+            background-color: scale-color(d-color("primary"), $lightness: 80%);
         }
     }
 
     // stylelint-disable max-nesting-depth
-    @each $key in $tdbc-button-variants {
-        $color: tdbc-color($key);
+    @each $key in $d-button-variants {
+        $color: d-color($key);
 
         @if ($key != "primary") {
             &--#{$key} {
                 background-color: $color;
 
                 @if ($key == "light") {
-                    color: tdbc-color("dark");
+                    color: d-color("dark");
                 }
 
                 &:focus {
